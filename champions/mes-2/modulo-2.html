@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mes 2 · Módulo 2: Del workflow al agente · Champions IA</title>
+<meta name="description" content="Mes 2 (n8n y agentes) · Semana 2 del Programa Champions IA de OCASA.">
+<meta property="og:title" content="Mes 2 · Módulo 2: Del workflow al agente · Champions IA">
+<meta property="og:description" content="Mes 2 (n8n y agentes) · Semana 2 del Programa Champions IA de OCASA.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/champions.css">
+</head>
+<body data-root="../" data-mes="mes-2">
+<nav class="mnav" aria-label="Navegación del curso"><div class="in"><a class="home" href="../index.html">Programa Champions</a><span class="sep">/</span><a class="mes" href="index.html"><span class="lg">Mes 2 · n8n</span><span class="sm">Mes 2</span></a><div class="pills" aria-label="Módulos"><a class="pill" data-mod="1" href="modulo-1.html" title="Módulo 1: Primeros workflows en n8n">1</a><a class="pill" data-mod="2" href="modulo-2.html" title="Módulo 2: Del workflow al agente" aria-current="page">2</a><a class="pill" data-mod="3" href="modulo-3.html" title="Módulo 3: Contexto y manos: RAG y MCP">3</a><a class="pill" data-mod="4" href="modulo-4.html" title="Módulo 4: Un agente en el que se pueda confiar">4</a></div><a class="xtra" href="adicional.html"><span class="lg">Material adicional</span><span class="sm">Extra</span></a></div></nav><main class="wrap page"><section class="week" id="s2" aria-labelledby="s2-t">
+  <div class="wnum" aria-hidden="true">2<small>de 4</small></div>
+  <div>
+    <h2 id="s2-t">Del workflow al agente</h2>
+    <p class="goal">Entender la diferencia entre un workflow que sigue reglas fijas y un agente que decide, y armar el tuyo con sus cuatro piezas: modelo, instrucciones, memoria y herramientas.</p>
+    <div class="wbar"><div class="track" aria-hidden="true"><div class="seg v" style="left:0;width:74.33%"></div><div class="seg p" style="left:74.33%;width:20.00%"></div><div class="cap"></div></div>
+      <div class="meta"><span>Ver: <b>3 h 43</b></span><span>Practicar: <b>1 h</b></span><span>Total: <b>4 h 43</b> de 5 h</span></div>
+    </div>
+    <div class="part"><h3>Para ver<span>obligatorio</span></h3><article class="media"><a class="thumb" href="https://app.lab10.ai/clase/agente" target="_blank" rel="noopener" aria-label="Abrir De 0 a Agente"><img src="https://i.ytimg.com/vi/kNpeSkO6ItU/hqdefault.jpg" alt="" loading="lazy"><span class="play"><i></i></span><span class="dur">1 h 43</span></a><div><h4><a href="https://app.lab10.ai/clase/agente" target="_blank" rel="noopener">De 0 a Agente</a></h4><p class="src">Lab10 · Taller · Nivel inicial</p><p>El taller central del bloque: se construye, se implementa y se publica un agente de IA desde cero. Prestá atención a cómo se escriben las instrucciones del agente y a cuándo el modelo decide solo y cuándo sigue una regla.</p><div class="links"><a href="https://app.lab10.ai/clase/agente" target="_blank" rel="noopener">Abrir la clase en Lab10</a><a href="https://www.youtube.com/watch?v=kNpeSkO6ItU" target="_blank" rel="noopener">Ver en YouTube</a></div><label class="done"><input type="checkbox" data-id="s2-m0"> Ya lo vi</label></div></article><article class="media"><a class="thumb" href="https://app.lab10.ai/clase/productividad" target="_blank" rel="noopener" aria-label="Abrir Agents 101: agente de gestión de tiempo y productividad"><img src="https://i.ytimg.com/vi/9U6gey2cerQ/hqdefault.jpg" alt="" loading="lazy"><span class="play"><i></i></span><span class="dur">2 h</span></a><div><h4><a href="https://app.lab10.ai/clase/productividad" target="_blank" rel="noopener">Agents 101: agente de gestión de tiempo y productividad</a></h4><p class="src">Lab10 · Taller · Nivel inicial</p><p>Un segundo taller práctico donde se arma un agente que ayuda a organizar el tiempo y las tareas. Repite los conceptos del anterior aplicados a otro caso, que es la mejor forma de fijarlos. Si querés, construilo a la par mientras lo mirás.</p><div class="links"><a href="https://app.lab10.ai/clase/productividad" target="_blank" rel="noopener">Abrir la clase en Lab10</a><a href="https://www.youtube.com/watch?v=9U6gey2cerQ" target="_blank" rel="noopener">Ver en YouTube</a></div><label class="done"><input type="checkbox" data-id="s2-m1"> Ya lo vi</label></div></article></div>
+    <div class="part"><h3>Para practicar<span>con el caso de reclamos por facturación</span></h3><div class="ex"><div class="exhead"><h4>1. Asistente de reclamos</h4><span class="t">30 min</span></div><p>Tu primer agente: recibe consultas de reclamos y aplica el criterio de tolerancia.</p>
+<ol><li>Creá un workflow con <b>Chat Trigger</b> y un nodo <b>AI Agent</b>. Conectale el modelo con la credencial que te pasa el equipo de Innovación.</li>
+<li>Pegá estas instrucciones en el mensaje de sistema del agente:</li></ol>
+<pre id="sys">Sos el asistente de reclamos de facturación de OCASA, una empresa de logística.
+Ayudás al equipo a revisar reclamos de clientes que dicen que un envío se facturó con un peso incorrecto.
+
+Para cada reclamo:
+1. Pedí el número de guía, el peso declarado y el peso facturado si falta alguno.
+2. Calculá la diferencia porcentual: (facturado - declarado) / declarado x 100.
+3. Si la diferencia es igual o menor al 5 %, indicá que está dentro de la tolerancia.
+4. Si es mayor al 5 %, indicá que hay que pedir el comprobante de pesaje.
+
+Respondé en español, en no más de 5 líneas.
+Si no tenés un dato, decilo. Nunca inventes pesos, importes ni números de guía.</pre><button class="copy" data-target="sys">Copiar instrucciones</button>
+<ol start="3"><li>Probalo con estos cuatro mensajes: “La guía GU-48302 declaró 95 kg y se facturaron 97”, “Me facturaron 64 kg y mandé 40”, “Tengo un reclamo de Farmacia Del Sol” y “¿Cuánto se le facturó a Textil Pampa?”.</li></ol>
+<p class="ok"><b>Listo cuando:</b> en el tercer mensaje te pide los datos que faltan y en el cuarto dice que no tiene la información en lugar de inventarla.</p><label class="done"><input type="checkbox" data-id="s2-e0"> Lo hice</label></div><div class="ex"><div class="exhead"><h4>2. Que se acuerde</h4><span class="t">10 min</span></div><p>Escribí “Mi cliente es Óptica Visión” y después “¿Qué cliente te dije?”. Primero sin memoria; después agregá el nodo <b>Simple Memory</b> al agente y repetí.</p>
+<p class="ok"><b>Listo cuando:</b> notás la diferencia y podés explicar para qué sirve la memoria.</p><label class="done"><input type="checkbox" data-id="s2-e1"> Lo hice</label></div><div class="ex"><div class="exhead"><h4>3. Su primera herramienta</h4><span class="t">20 min</span></div><p>Conectale al agente la planilla de práctica como herramienta (<b>Google Sheets Tool</b>, operación de lectura). Agregá a las instrucciones: “Si te dan un número de reclamo, buscalo en la planilla”.</p>
+<p>Preguntale: “¿Qué pasa con el reclamo R-0006?” y “¿Y con el R-0016?” (a ese le falta el peso facturado).</p>
+<p class="ok"><b>Listo cuando:</b> responde con los datos reales de la planilla y en el R-0016 avisa que falta un dato.</p><label class="done"><input type="checkbox" data-id="s2-e2"> Lo hice</label></div></div>
+    <div class="part"><h3>Para traer a la clase</h3><div class="cls"><ul><li>Captura del agente funcionando con la herramienta.</li><li>En tu proceso del proyecto integrador: ¿qué decisión dejarías en una regla fija (un nodo If) y cuál dejarías al criterio del agente? Una línea para cada una.</li><li>La respuesta del agente que más te sorprendió, para bien o para mal.</li></ul></div></div>
+  </div>
+</section><aside class="kitmini"><b>Archivos de práctica:</b><a href="../assets/archivos/reclamos-facturacion-prueba.csv" download>planilla de reclamos (CSV)</a><a href="../assets/archivos/procedimiento-diferencias-de-peso.txt" download>procedimiento (TXT)</a></aside><nav class="pager" aria-label="Entre módulos"><a class="prev" href="modulo-1.html">← Módulo 1<small>Primeros workflows en n8n</small></a><div class="pstat" data-mod="2"></div><a class="next" href="modulo-3.html">Módulo 3 →<small>Contexto y manos: RAG y MCP</small></a></nav><footer>Programa Champions IA · Equipo de Innovación · OCASA. Los talleres son de Lab10; los datos de práctica son ficticios.</footer></main>
+<script src="../assets/curso.js"></script>
+<script src="../assets/champions.js"></script>
+</body>
+</html>

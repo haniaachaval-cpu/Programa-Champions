@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mes 2 · Módulo 1: Primeros workflows en n8n · Champions IA</title>
+<meta name="description" content="Mes 2 (n8n y agentes) · Semana 1 del Programa Champions IA de OCASA.">
+<meta property="og:title" content="Mes 2 · Módulo 1: Primeros workflows en n8n · Champions IA">
+<meta property="og:description" content="Mes 2 (n8n y agentes) · Semana 1 del Programa Champions IA de OCASA.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/champions.css">
+</head>
+<body data-root="../" data-mes="mes-2">
+<nav class="mnav" aria-label="Navegación del curso"><div class="in"><a class="home" href="../index.html">Programa Champions</a><span class="sep">/</span><a class="mes" href="index.html"><span class="lg">Mes 2 · n8n</span><span class="sm">Mes 2</span></a><div class="pills" aria-label="Módulos"><a class="pill" data-mod="1" href="modulo-1.html" title="Módulo 1: Primeros workflows en n8n" aria-current="page">1</a><a class="pill" data-mod="2" href="modulo-2.html" title="Módulo 2: Del workflow al agente">2</a><a class="pill" data-mod="3" href="modulo-3.html" title="Módulo 3: Contexto y manos: RAG y MCP">3</a><a class="pill" data-mod="4" href="modulo-4.html" title="Módulo 4: Un agente en el que se pueda confiar">4</a></div><a class="xtra" href="adicional.html"><span class="lg">Material adicional</span><span class="sm">Extra</span></a></div></nav><main class="wrap page"><section class="week" id="s1" aria-labelledby="s1-t">
+  <div class="wnum" aria-hidden="true">1<small>de 4</small></div>
+  <div>
+    <h2 id="s1-t">Primeros workflows en n8n</h2>
+    <p class="goal">Que te muevas con soltura en n8n: qué es un nodo, qué dispara un workflow, cómo pasan los datos de un paso al siguiente, cómo se conectan tus cuentas y cómo se lee un error. Es la base para que el resto del bloque no se trabe en la interfaz.</p>
+    <div class="wbar"><div class="track" aria-hidden="true"><div class="seg v" style="left:0;width:36.67%"></div><div class="seg p" style="left:36.67%;width:23.33%"></div><div class="cap"></div></div>
+      <div class="meta"><span>Ver: <b>1 h 50</b></span><span>Practicar: <b>1 h 10</b></span><span>Total: <b>3 h</b> de 5 h</span></div>
+    </div>
+    <div class="part"><h3>Para ver<span>obligatorio</span></h3><article class="media"><a class="thumb doc" href="https://www.youtube.com/playlist?list=PLlET0GsrLUL59YbxstZE71WszP3pVnZfI" target="_blank" rel="noopener" aria-label="Abrir Curso de n8n desde cero"><span class="lines"><span></span><span></span><span></span></span><b>Playlist</b><span class="dur">1 h 50</span></a><div><h4><a href="https://www.youtube.com/playlist?list=PLlET0GsrLUL59YbxstZE71WszP3pVnZfI" target="_blank" rel="noopener">Curso de n8n desde cero</a></h4><p class="src">Playlist de YouTube · 1 h 50 en total</p><p>Una serie de videos cortos que recorre n8n desde el principio: crear un workflow, conectar cuentas, usar expresiones y ejecutar. Miralos con n8n abierto al lado y repetí cada paso mientras lo ves: así la práctica de la semana te va a salir mucho más rápido. La documentación oficial queda como diccionario: no hace falta leerla entera.</p><div class="links"><a href="https://www.youtube.com/playlist?list=PLlET0GsrLUL59YbxstZE71WszP3pVnZfI" target="_blank" rel="noopener">Abrir la playlist en YouTube</a><a href="https://docs.n8n.io" target="_blank" rel="noopener">Documentación de n8n (para consultar)</a></div><label class="done"><input type="checkbox" data-id="s1-m0"> Ya lo vi</label></div></article></div>
+    <div class="part"><h3>Para practicar<span>con el caso de reclamos por facturación</span></h3><div class="ex"><div class="exhead"><h4>1. Tu primer workflow</h4><span class="t">15 min</span></div><p>Un workflow mínimo que escribe en una planilla cada vez que lo ejecutás.</p>
+<ol><li>Creá un workflow nuevo y agregá el trigger <b>Manual Trigger</b>.</li>
+<li>Sumá un nodo <b>Edit Fields (Set)</b> con dos campos: <code>nombre</code> (tu nombre) y <code>fecha</code> con la expresión <code>{{ $now.toFormat('dd/MM/yyyy HH:mm') }}</code>.</li>
+<li>Conectá un nodo <b>Google Sheets</b> con la operación <i>Append Row</i> sobre una planilla nueva.</li></ol>
+<p class="ok"><b>Listo cuando:</b> cada vez que ejecutás el workflow aparece una fila nueva con tu nombre y la hora.</p><label class="done"><input type="checkbox" data-id="s1-e0"> Lo hice</label></div><div class="ex"><div class="exhead"><h4>2. Formulario de reclamos que decide solo</h4><span class="t">40 min</span></div><p>El cliente carga su reclamo y el workflow decide si hay que revisarlo o no.</p>
+<ol><li>Usá el trigger <b>n8n Form</b> con cuatro campos: <code>cliente</code>, <code>nro_guia</code>, <code>peso_declarado</code> y <code>peso_facturado</code> (los dos pesos de tipo número).</li>
+<li>Con un <b>Edit Fields</b> calculá la diferencia porcentual: <code>{{ (($json.peso_facturado - $json.peso_declarado) / $json.peso_declarado * 100).toFixed(1) }}</code>.</li>
+<li>Agregá un nodo <b>If</b>: diferencia mayor a 5.</li>
+<li>Rama verdadera: un <b>Gmail</b> que te mande a vos “Revisar guía X: diferencia de Y %”. Rama falsa: una fila en Google Sheets con la etiqueta “dentro de tolerancia”.</li></ol>
+<p class="ok"><b>Listo cuando:</b> probaste un reclamo que va por cada rama (por ejemplo, la guía GU-48233 y la GU-48211 de la planilla de práctica).</p><label class="done"><input type="checkbox" data-id="s1-e1"> Lo hice</label></div><div class="ex"><div class="exhead"><h4>3. Rompelo a propósito</h4><span class="t">15 min</span></div><p>Leer errores es la mitad del trabajo en n8n, así que conviene practicarlo con algo que ya conocés.</p>
+<ol><li>En el workflow 2, cambiá la expresión para que use <code>$json.peso_real</code> (un campo que no existe) y ejecutá.</li>
+<li>Abrí el nodo que falló y leé el mensaje. Mirá también la pestaña de ejecuciones.</li>
+<li>Arreglalo y anotá en una línea qué decía el error y cómo te diste cuenta.</li></ol>
+<p class="ok"><b>Listo cuando:</b> podés explicar con tus palabras qué salió mal.</p><label class="done"><input type="checkbox" data-id="s1-e2"> Lo hice</label></div><div class="ex extra"><div class="exhead"><h4>Desafío opcional: resumen diario</h4><span class="t">15 min</span></div><p>Reemplazá el trigger por un <b>Schedule Trigger</b> todos los días a las 9, que lea la planilla de práctica y te mande por mail cuántos reclamos tienen una diferencia mayor al 5 %.</p><label class="done"><input type="checkbox" data-id="s1-e3"> Lo hice</label></div></div>
+    <div class="part"><h3>Para traer a la clase</h3><div class="cls"><ul><li>El workflow 2 exportado (menú de los tres puntos &gt; <i>Download</i>).</li><li>Tu línea sobre el error del ejercicio 3.</li><li>Una duda concreta sobre n8n, aunque te parezca básica.</li></ul></div></div>
+  </div>
+</section><aside class="kitmini"><b>Archivos de práctica:</b><a href="../assets/archivos/reclamos-facturacion-prueba.csv" download>planilla de reclamos (CSV)</a><a href="../assets/archivos/procedimiento-diferencias-de-peso.txt" download>procedimiento (TXT)</a></aside><nav class="pager" aria-label="Entre módulos"><a class="prev" href="index.html">← Índice del mes<small>Mes 2 · n8n y agentes</small></a><div class="pstat" data-mod="1"></div><a class="next" href="modulo-2.html">Módulo 2 →<small>Del workflow al agente</small></a></nav><footer>Programa Champions IA · Equipo de Innovación · OCASA. Los talleres son de Lab10; los datos de práctica son ficticios.</footer></main>
+<script src="../assets/curso.js"></script>
+<script src="../assets/champions.js"></script>
+</body>
+</html>
